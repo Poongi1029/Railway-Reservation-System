@@ -1,0 +1,56 @@
+<h1 style="color:darkcyan;">
+    {{response}}</h1>
+<div class="login-page">
+
+    <mat-card class="mat-elevation-z12">
+        <mat-card-title style="text-align:center;">
+            <mat-icon>login</mat-icon>SignUp</mat-card-title>
+        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+
+            <mat-card-content>
+
+                <mat-tab label="Sign Up">
+                    <mat-card-content>
+                        <form (ngSubmit)="OnRegister()">
+                            <mat-form-field>
+                                <label for="exampleInputuser" class="form-label">User</label>
+                                <input matInput placeholder="" required name="user" [(ngModel)]="authenticationRequest.username">
+
+                                <mat-icon matSuffix>supervised_user_circle</mat-icon>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <label for="exampleInputEmail" class="form-label">Email address</label>
+                                <input matInput placeholder="" required name="email" [(ngModel)]="authenticationRequest.email">
+                                <!-- <mat-error *ngIf="email.invalid">Email is required</mat-error> -->
+                                <mat-icon matSuffix>email</mat-icon>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <label for="exampleInputpwd" class="form-label">Password</label>
+                                <input matInput [type]="showPassword ? 'text' : 'password'" name="password" placeholder="" type="password" required minlength="6" name="password" [(ngModel)]="authenticationRequest.password">
+                                <!-- <mat-error *ngIf="password.errors && password.errors?.['required']" id="togglePassword">
+                    Password is required
+                </mat-error>
+                <mat-error *ngIf="password.errors && password.errors?.['minlength']">
+                    Password must be of length 6
+                </mat-error> -->
+
+                                <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                                    {{showPassword?'visibility':'visibility_off'}}
+                                </mat-icon>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <label for="exampleInputcpwd" class="form-label">Conform password</label>
+                                <input matInput [type]="showPassword ? 'text' : 'password'" name="password" placeholder="" type="password" required minlength="6" name="repassword" [(ngModel)]="authenticationRequest.password">
+                                <!-- <mat-error *ngIf="repassword.errors && repassword.errors?.['required']">
+                    Re-Enter Password is required
+                </mat-error> -->
+                                <mat-icon matSuffix>visibility_off</mat-icon>
+                            </mat-form-field>
+                            <button mat-raised-button color="primary" class="login-button">
+    Sign Up
+  </button>
+                        </form>
+
+                    </mat-card-content>
+                </mat-tab>

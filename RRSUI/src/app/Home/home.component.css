@@ -1,0 +1,36 @@
+.homepage {
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 1125%;
+  display: block;
+  height: 695px;
+  color: #fff;
+background-image: url("https://wallpaperaccess.com/full/2709866.jpg");
+    /* background-color: #303F9F;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.text{
+  margin-left: 450px;
+  margin-top: 200px;
+  position:absolute;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-decoration: solid;
+  font-size: large;
+  font-weight: 1500;
+  font-family:  'Courier New', Courier, monospace;
+  font-style: italic ;
+
+
+
+}

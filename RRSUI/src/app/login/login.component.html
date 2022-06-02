@@ -1,0 +1,44 @@
+<h1 style="color:darkcyan;">{{response}}</h1>
+<div class="login-page">
+
+    <mat-card class="mat-elevation-z12">
+        <mat-card-title style="text-align:center;">
+            <mat-icon>login</mat-icon>SignIn</mat-card-title>
+        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+            <mat-tab label="Sign In">
+                <mat-card-content>
+
+                    <form (ngSubmit)="onSubmit()">
+                        <mat-form-field>
+                            
+                            <label for="exampleInputuname" class="form-label">Username</label>
+                            <input matInput placeholder="" required name="user" [(ngModel)]="authenticationRequest.username">
+
+                            <mat-icon matSuffix>supervised_user_circle</mat-icon>
+                            
+                        </mat-form-field>
+                        <mat-form-field>
+                            <label for="exampleInputpwd" class="form-label">Password</label>
+                            <input matInput [type]="showPassword ? 'text' : 'password'" name="password" placeholder="" type="password" required minlength="6" name="password" [(ngModel)]="authenticationRequest.password">
+                            
+                            <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                                {{showPassword?'visibility':'visibility_off'}}
+                            </mat-icon>
+                        </mat-form-field>
+                        <mat-checkbox>Remember Me!</mat-checkbox>
+                        <button mat-raised-button class="login-button">
+                  Sign In
+                </button>
+
+                        <button mat-raised-button class="login-button">
+                  Login with Google
+                </button>
+                        <a routerLink="/register" style="float: right;color:rgb(136, 105, 57);">New User?Click on SighnUp</a>
+                    </form>
+
+                </mat-card-content>
+            </mat-tab>
+            
+        </mat-tab-group>
+    </mat-card>
+</div>
